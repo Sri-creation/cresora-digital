@@ -9,38 +9,39 @@ const testimonials = [
 
 export default function TestimonialsSection() {
   return (
-    <section className="relative py-32 px-6">
-      <div className="absolute top-1/2 right-0 w-[300px] h-[300px] rounded-full bg-glow-secondary/10 blur-[100px]" />
+    <section className="relative py-40 px-6">
+      <div className="absolute top-1/2 right-0 w-[400px] h-[400px] rounded-full bg-glow-secondary/8 blur-[140px]" />
 
-      <div className="relative mx-auto max-w-6xl">
+      <div className="relative mx-auto max-w-5xl">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="text-center mb-20"
         >
-          <p className="text-sm font-medium text-primary tracking-widest uppercase mb-3">Testimonials</p>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight">
+          <p className="section-label mb-4">Testimonials</p>
+          <div className="premium-divider mb-8" />
+          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold tracking-tighter">
             What Clients <span className="glow-text">Say</span>
           </h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-3 gap-8">
           {testimonials.map((t, i) => (
             <motion.div
               key={t.name}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="glass-card-hover p-8"
+              transition={{ duration: 0.6, delay: i * 0.12, ease: "easeOut" }}
+              className="glass-card-hover p-9 flex flex-col"
             >
-              <Quote size={20} className="text-primary/40 mb-4" />
-              <p className="text-sm text-muted-foreground leading-relaxed mb-6">{t.text}</p>
-              <div>
-                <p className="text-sm font-semibold">{t.name}</p>
-                <p className="text-xs text-muted-foreground">{t.role}</p>
+              <Quote size={18} className="text-primary/30 mb-5" strokeWidth={1.5} />
+              <p className="text-sm text-muted-foreground leading-[1.8] mb-8 flex-1 font-light">{t.text}</p>
+              <div className="border-t border-glass-border pt-5">
+                <p className="text-sm font-semibold tracking-tight">{t.name}</p>
+                <p className="text-xs text-muted-foreground mt-0.5">{t.role}</p>
               </div>
             </motion.div>
           ))}
