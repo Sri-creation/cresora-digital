@@ -36,6 +36,10 @@ export const Route = createRootRoute({
       { name: "author", content: "CRESORA DIGITAL" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
+      { property: "og:title", content: "CRESORA DIGITAL — High-Converting Digital Experiences" },
+      { name: "twitter:title", content: "CRESORA DIGITAL — High-Converting Digital Experiences" },
+      { property: "og:description", content: "Premium digital agency crafting modern websites, landing pages, and e-commerce solutions." },
+      { name: "twitter:description", content: "Premium digital agency crafting modern websites, landing pages, and e-commerce solutions." },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
