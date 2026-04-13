@@ -2,48 +2,49 @@ import { motion } from "framer-motion";
 import { Shield, Zap, Target } from "lucide-react";
 
 const values = [
-  { icon: Shield, title: "Trust & Reliability", desc: "We deliver on our promises, every single time." },
-  { icon: Zap, title: "Fast Delivery", desc: "Quick turnarounds without compromising quality." },
-  { icon: Target, title: "Results-Driven", desc: "Every pixel is designed to convert visitors into customers." },
+  { icon: Shield, title: "Trust & Reliability", desc: "We deliver on our promises with unwavering consistency." },
+  { icon: Zap, title: "Fast Delivery", desc: "Rapid turnarounds without compromising on quality." },
+  { icon: Target, title: "Results-Driven", desc: "Every decision is designed to maximize conversions." },
 ];
 
 export default function AboutSection() {
   return (
-    <section id="about" className="relative py-32 px-6">
-      <div className="mx-auto max-w-6xl">
+    <section id="about" className="relative py-40 px-6">
+      <div className="mx-auto max-w-5xl">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="text-center mb-20"
         >
-          <p className="text-sm font-medium text-primary tracking-widest uppercase mb-3">About Us</p>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-6">
+          <p className="section-label mb-4">About Us</p>
+          <div className="premium-divider mb-8" />
+          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold tracking-tighter mb-8">
             Crafting Digital Excellence
           </h2>
-          <p className="mx-auto max-w-2xl text-muted-foreground leading-relaxed">
-            CRESORA DIGITAL is a modern digital agency focused on delivering affordable, high-quality websites
-            and digital experiences. We combine cutting-edge design with clean code to create solutions that
-            truly work for your business.
+          <p className="mx-auto max-w-2xl text-muted-foreground leading-relaxed font-light">
+            CRESORA DIGITAL is a modern studio focused on delivering premium websites
+            and digital experiences. We combine cutting-edge design with clean engineering
+            to create solutions that elevate your business.
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-3 gap-8">
           {values.map((item, i) => (
             <motion.div
               key={item.title}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="glass-card-hover p-8 text-center"
+              transition={{ duration: 0.6, delay: i * 0.12, ease: "easeOut" }}
+              className="glass-card-hover p-10 text-center"
             >
-              <div className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10">
-                <item.icon size={24} className="text-primary" />
+              <div className="mx-auto mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/8 border border-primary/10">
+                <item.icon size={22} className="text-primary" strokeWidth={1.5} />
               </div>
-              <h3 className="text-lg font-semibold mb-2">{item.title}</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
+              <h3 className="font-display text-lg font-semibold mb-3 tracking-tight">{item.title}</h3>
+              <p className="text-sm text-muted-foreground leading-relaxed font-light">{item.desc}</p>
             </motion.div>
           ))}
         </div>
