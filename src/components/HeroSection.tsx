@@ -33,17 +33,12 @@ export default function HeroSection() {
           </div>
         </motion.div>
 
-        <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.15, ease: "easeOut" }}
-          className="font-display text-5xl sm:text-6xl md:text-8xl font-bold tracking-tighter leading-[0.95] mb-8"
-        >
+        <h1 className="font-display text-5xl sm:text-6xl md:text-8xl font-bold tracking-tighter leading-[0.95] mb-8">
           We Build{" "}
           <span className="glow-text">Digital</span>
           <br />
           Experiences
-        </motion.h1>
+        </h1>
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}
